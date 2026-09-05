@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="portfolio.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="#top" class="logo">PORTFOLIO</a>
+
+    <nav class="nav">
+      <a href="#works">WORKS</a>
+      <!--<a href="#index">INDEX</a>-->
+      <a href="#about">ABOUT</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">FASHION DESIGNER</p>
+        <h1>DESIGNER SOK</h1>
+        <p class="years">SELECTED WORKS 2024—2026</p>
+      </div>
+
+      <a class="scroll-guide" href="#works">SCROLL ↓</a>
+    </section>
+
+    <section class="works section" id="works">
+      <div class="section-head">
+        <p>01</p>
+        <h2>SELECTED WORKS</h2>
+      </div>
+
+      <article class="project project-left">
+        <a href="#" class="project-image">
+          <img src="images/look01.png" alt="Project 01" />
+        </a>
+        <div class="project-meta">
+          <span>01</span>
+          <h3>UNTITLED</h3>
+          <p>GARMENT DESIGN / 2026</p>
+        </div>
+      </article>
+
+      <article class="project project-right">
+        <a href="#" class="project-image">
+          <img src="images/look02.png" alt="Project 02" />
+        </a>
+        <div class="project-meta">
+          <span>02</span>
+          <h3>STRUCTURE</h3>
+          <p>COLLECTION / 2026</p>
+        </div>
+      </article>
+
+      <article class="project project-wide">
+        <a href="#" class="project-image">
+          <img src="images/look03.png" alt="Project 03" />
+        </a>
+        <div class="project-meta">
+          <span>03</span>
+          <h3>EXPERIMENTAL GARMENT</h3>
+          <p>TEXTILE / 2025</p>
+        </div>
+      </article>
+    </section>
+   <!--
+    <section class="index-section section" id="index">
+      <div class="section-head">
+        <p>02</p>
+        <h2>INDEX</h2>
+      </div>
+
+      <div class="index-list">
+        <a class="index-item" href="#" data-image="images/look01.png">
+          <span>01</span>
+          <strong>UNTITLED</strong>
+          <span>2026</span>
+        </a>
+
+        <a class="index-item" href="#" data-image="images/look02.png">
+          <span>02</span>
+          <strong>STRUCTURE</strong>
+          <span>2026</span>
+        </a>
+
+        <a class="index-item" href="#" data-image="images/look03.png">
+          <span>03</span>
+          <strong>EXPERIMENTAL GARMENT</strong>
+          <span>2025</span>
+        </a>
+      </div>
+
+      <div class="preview" id="preview">
+        <img src="" alt="" />
+      </div>
+    </section>
+-->
+    <section class="about section" id="about">
+      <div class="section-head">
+        <p>02</p>
+        <h2>ABOUT</h2>
+      </div>
+
+      <div class="about-grid">
+        <div>
+          <p class="about-name">DESIGNER NAME</p>
+          <p>Fashion Designer<br />Based in Seoul</p>
+        </div>
+
+        <div class="about-copy">
+          <p>
+            의복의 구조, 소재, 실루엣을 중심으로 작업합니다.
+            이곳은 완성된 의상뿐 아니라 스케치, 제작 과정,
+            소재 실험과 컬렉션을 기록하는 아카이브입니다.
+          </p>
+        </div>
+
+        <div class="contact">
+          <a href="https://www.instagram.com/uuraccaii.t?igsi=MWNmeDJ0d2c2YWNlNg==">INSTAGRAM ↗</a>
+          <a href="mailto:example@email.com">EMAIL ↗</a>
+          <a href="shop.html">SHOP ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 DESIGNER NAME</p>
+    <a href="#top">BACK TO TOP ↑</a>
+  </footer>
+
+  <script>
+const preview = document.getElementById("preview");
+const previewImage = preview.querySelector("img");
+const items = document.querySelectorAll(".index-item");
+
+items.forEach((item) => {
+  item.addEventListener("mouseenter", () => {
+    previewImage.src = item.dataset.image;
+    preview.classList.add("active");
+  });
+
+  item.addEventListener("mousemove", (event) => {
+    preview.style.left = `${event.clientX}px`;
+    preview.style.top = `${event.clientY}px`;
+  });
+
+  item.addEventListener("mouseleave", () => {
+    preview.classList.remove("active");
+  });
+});
+</script>
+
+</body>
+</html>
+</body>
+</html>

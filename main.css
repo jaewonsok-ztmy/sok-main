@@ -1,0 +1,284 @@
+/* =========================
+   기본 설정
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+
+    background-color: #f3f1eb;
+    color: #111;
+
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   전체 화면
+========================= */
+
+.main-page {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================
+   이미지 + 메뉴 전체 그룹
+========================= */
+
+.main-container {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* =========================
+   보이지 않는 Hover 영역
+
+   이미지에서 메뉴까지 마우스를
+   이동해도 메뉴가 닫히지 않게 함
+========================= */
+
+.main-container::before {
+    content: "";
+
+    position: absolute;
+
+    left: -250px;
+    right: -250px;
+
+    top: 0;
+    bottom: 0;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   중앙 이미지
+   원본: 1593 x 1783
+========================= */
+
+.image-frame {
+    position: relative;
+
+    width: min(55vw, 550px);
+
+    aspect-ratio: 1593 / 1783;
+
+    z-index: 5;
+
+    cursor: pointer;
+}
+
+
+/* 실제 이미지 */
+
+.image-frame img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
+}
+
+
+/* =========================
+   메뉴 공통
+========================= */
+
+.menu-item {
+    position: absolute;
+
+    /* 이미지 중앙 가로선 */
+    top: 50%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: #111;
+
+    text-decoration: none;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 20;
+
+    transition:
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.35s ease;
+}
+
+
+/* =========================
+   메뉴 글씨
+========================= */
+
+.menu-item span {
+    writing-mode: horizontal-tb;
+
+    white-space: nowrap;
+
+    font-size: 30px;
+    font-weight: 400;
+
+    letter-spacing: 0.5px;
+
+    line-height: 1;
+
+    transition: opacity 0.2s ease;
+}
+
+
+/* =========================
+   Portfolio
+========================= */
+
+.portfolio {
+    left: 0;
+    top: calc(50% - 20px);
+
+    transform:
+        translate(-30px, -50%);
+}
+
+
+/* =========================
+   Shop
+========================= */
+
+.shop {
+    left: 0;
+    top: calc(50% + 20px);
+
+    transform:
+        translate(-30px, -50%);
+}
+
+
+
+/* =========================
+   Music
+========================= */
+
+.music {
+    right: 0;
+
+    transform:
+        translate(30px, -50%);
+}
+
+
+/* =========================
+   메뉴 등장
+
+   main-container 전체 Hover
+========================= */
+
+.main-container:hover .portfolio {
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform:
+        translate(-210px, -50%);
+}
+.main-container:hover .shop {
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform:
+        translate(-210px, -50%);
+}
+
+
+.main-container:hover .music {
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform:
+        translate(210px, -50%);
+}
+
+
+
+
+
+/* =========================
+   글씨 Hover
+========================= */
+
+.menu-item:hover span {
+    opacity: 0.45;
+}
+
+
+/* =========================
+   작은 화면 대응
+========================= */
+
+@media (max-width: 900px) {
+
+    .image-frame {
+        width: 60vw;
+    }
+
+
+    .main-container::before {
+        left: -180px;
+        right: -180px;
+    }
+
+
+    .menu-item span {
+        font-size: 22px;
+    }
+
+
+    .main-container:hover .portfolio {
+        transform:
+            translate(-150px, -50%);
+    }
+
+
+    .main-container:hover .shop {
+        transform:
+            translate(-150px, -50%);
+    }
+
+    .main-container:hover .music {
+        transform:
+            translate(150px, -50%);
+    }
+
+}

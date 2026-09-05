@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHECKOUT — IDIOTEQUE</title>
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+  <header class="checkout-header">
+    <a href="shop.html" class="brand">IDIOTEQUE</a>
+    <a href="shop.html" class="back-link">← BACK TO SHOP</a>
+  </header>
+
+  <main class="checkout-layout">
+    <section class="customer-section">
+      <p class="section-number">01 / SHIPPING</p>
+      <h1>CHECKOUT</h1>
+
+      <form id="checkoutForm">
+        <label>NAME<input type="text" name="name" autocomplete="name" required></label>
+        <label>PHONE<input type="tel" name="phone" autocomplete="tel" placeholder="010-0000-0000" required></label>
+        <label>POSTCODE
+          <span class="postcode-row">
+            <input type="text" name="postcode" inputmode="numeric" required>
+            <button type="button" id="postcodeBtn">FIND ADDRESS</button>
+          </span>
+        </label>
+        <label>ADDRESS<input type="text" name="address" autocomplete="street-address" required></label>
+        <label>ADDRESS DETAIL<input type="text" name="addressDetail" required></label>
+        <label>DELIVERY NOTE<input type="text" name="deliveryNote" placeholder="배송 요청사항 (선택)"></label>
+      </form>
+    </section>
+
+    <aside class="order-section">
+      <p class="section-number">02 / ORDER</p>
+      <h2>ORDER SUMMARY</h2>
+      <div id="orderItems" class="order-items"></div>
+      <div class="price-row"><span>SUBTOTAL</span><span id="subtotal">₩0</span></div>
+      <div class="price-row"><span>SHIPPING</span><span>₩0</span></div>
+      <div class="price-row total"><span>TOTAL</span><strong id="orderTotal">₩0</strong></div>
+      <button type="submit" form="checkoutForm" class="payment-btn" id="paymentBtn">PLACE TEST ORDER</button>
+      <p class="payment-note">현재는 테스트 주문으로 저장됩니다. 실제 결제와 재고 차감은 결제 서버 연결 후 활성화됩니다.</p>
+    </aside>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

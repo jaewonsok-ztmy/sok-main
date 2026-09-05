@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHOP</title>
+  <link rel="stylesheet" href="shop.css" />
+</head>
+<body>
+<header class="header">
+  <a href="#" class="brand">IDIOTEQUE</a>
+  <nav class="nav">
+    <a href="#new">NEW</a><a href="#shop">SHOP</a><a href="#about">ABOUT</a>
+    <button id="cartBtn" class="cart-btn">CART (<span id="cartCount">0</span>)</button>
+  </nav>
+</header>
+<main>
+<section class="hero" id="new"><img src="images/hero.jpg" alt="Collection Hero"><div class="hero-overlay"><p>2026 COLLECTION</p><h1>NEW<br>COLLECTION</h1><a href="#shop">SHOP NOW ↓</a></div></section>
+<section class="shop-section" id="shop"><div class="section-title"><p>01</p><h2>SHOP</h2><p>ALL PRODUCTS</p></div><div class="filters"><button class="filter active" data-category="all">ALL</button><button class="filter" data-category="outer">OUTER</button><button class="filter" data-category="top">TOP</button><button class="filter" data-category="bottom">BOTTOM</button><button class="filter" data-category="accessory">ACCESSORY</button></div><div class="product-grid" id="productGrid"></div></section>
+<section class="editorial"><div class="editorial-image"><img src="images/editorial.jpg" alt="Editorial"></div><div class="editorial-text"><p>ABOUT THE COLLECTION</p><h2>CLOTHING AS<br>STRUCTURE,<br>NOT DECORATION.</h2><p class="small">실루엣과 구조, 소재의 질감을 중심으로 전개한 컬렉션입니다. 완성된 제품뿐 아니라 제작 과정과 디자인 의도를 함께 보여줍니다.</p></div></section>
+<section class="about" id="about"><div><p class="section-label">02 / ABOUT</p></div><div class="about-copy"><h2>DESIGNED IN SEOUL.</h2><p>브랜드 소개. 디자이너의 작업 방향, 컬렉션의 콘셉트, 제작 방식 등을 간단하게 소개할 수 있습니다.</p></div></section>
+</main>
+<footer><p>© 2026 IDIOTEQUE</p><div><a href="#">INSTAGRAM</a><a href="#">CONTACT</a></div></footer>
+<aside class="cart-drawer" id="cartDrawer"><div class="cart-header"><h2>CART</h2><button id="closeCart">CLOSE</button></div><div id="cartItems" class="cart-items"></div><div class="cart-footer"><div class="total-row"><span>TOTAL</span><strong id="cartTotal">₩0</strong></div><button class="checkout-btn" id="checkoutBtn">CHECKOUT</button></div></aside>
+<div class="overlay" id="overlay"></div>
+<div class="product-modal" id="productModal"><button class="modal-close" id="modalClose">CLOSE</button><div class="modal-image"><button class="image-arrow image-prev" id="imagePrev" type="button" aria-label="Previous image">←</button><img id="modalImage" src="" alt=""><button class="image-arrow image-next" id="imageNext" type="button" aria-label="Next image">→</button></div><div class="modal-info"><p id="modalCategory" class="modal-category"></p><h2 id="modalName"></h2><p id="modalPrice" class="modal-price"></p><div class="option-block"><p>SIZE</p><div class="sizes" id="modalSizes"></div></div><div class="quantity-section"><p class="quantity-label">QUANTITY</p><div class="quantity-control"><button type="button" id="modalQtyMinus">−</button><span id="modalQuantity">1</span><button type="button" id="modalQtyPlus">+</button></div></div><button class="add-btn" id="modalAddBtn">ADD TO CART</button><div class="description"><p>DESCRIPTION</p><p id="modalDescription">제품 상세 설명을 넣는 공간입니다.</p></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="shop.js"></script>
+</body></html>
